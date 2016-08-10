@@ -1,7 +1,9 @@
 <h3>Uploaded by <%= link_to user.name, user %>:</h3>
+<p><%= user.name.capitalize %> has uploaded <%= user.note_count %> notes and <%= user.photo_count %> photos in the last week<p>
+<p><%= user.name.capitalize %> has uploaded <%= user.notes.count %> total notes and <%= user.photos.count %> total photos<p>
 
 <% user.photos.each do |photo| %>
-  <% if authorized?(photo) %>
+  <% if authorized_show?(photo) %>
     <h5><%= link_to photo.name, photo %></h5>
     <p>Category: <%= link_to photo.category.name, photo.category %></p>
     <p>Last Updated: <%= photo.updated_at %></p>
@@ -11,7 +13,7 @@
 <% end %>
 
 <% user.notes.each do |note| %>
-  <% if authorized?(note) %>
+  <% if authorized_show?(note) %>
     <h5><%= link_to note.name, note %></h5>
     <p>Category: <%= link_to note.category.name, note.category %></p>
     <p>Last Updated:<%= note.updated_at %></p>

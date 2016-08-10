@@ -1,14 +1,18 @@
 <div> <%= link_to "Create Category", new_category_path, class: "btn" %> </div>
 
-  <% categories.each do |category| %>
-    <p><% if [category.children, category.notes, category.photos].all?(&:empty?) %></p>
-      <%= link_to category.name + " (No items)", category %>
-    <% else %>
-      <p><%= link_to category.name + " (#{item_count(category)})", category %></p>
-    <% end %>
-  <% end %>
 <% categories.each do |category| %>
-  <p><%= link_to category.name, category %></p>
+  <div class="row">
+    <div class="card file-card col m8 offset-m2">
+      <div class="card-content white-text">
+        <span class="card-title">Category:
+        <% if [category.children, category.notes, category.photos].all?(&:empty?) %>
+          <%= link_to category.name + " (No items)", category, class: "link-color" %>
+        <% else %>
+          <%= link_to category.name + " (#{item_count(category)})", category, class: "link-color" %>
+        <% end %></span>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <% if notes %>

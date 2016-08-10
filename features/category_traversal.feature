@@ -7,7 +7,6 @@ Background: An Admin Logs In
     And I fill in "Password" with "password"
     And I press "Submit"
     Then I should see "Welcome admin!"
-    And I should see "Homepage"
 
 Scenario: Existing User Goes to Category Index
   And I visit "/categories"

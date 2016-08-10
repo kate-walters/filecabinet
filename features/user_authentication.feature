@@ -8,6 +8,5 @@ Feature: As a User, In order to use the app, I would like to be able to login
     And I fill in "Password" with "password"
     And I press "Submit"
     Then I should see "Welcome user!"
-    And I should see "Homepage"
 
   Scenario: User Without an Account Signs Up

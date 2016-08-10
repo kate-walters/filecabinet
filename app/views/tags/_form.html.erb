@@ -2,12 +2,12 @@
 
 <div>
   <%= form_for(tag) do |f| %>
-    <div>
+    <div class="field">
       <label for="name">Name: </label>
       <%= f.text_area :name, placeholder: "Nametag", class: 'form-field' %>
     </div>
 
-    <div>
+    <div class="field">
       <%= f.submit %>
     </div>
   <% end %>

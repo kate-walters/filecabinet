@@ -1,12 +1,15 @@
 <%= form_for(category) do |f| %>
-  <div>
+
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
-  <%= f.hidden_field :parent_category_id, value: params[:parent_category_id] %>
-  
-  <div>
-    <%= f.submit %>
+  <div class="actions">
+    <%= f.hidden_field :parent_category_id, value: params[:parent_category_id] %>
+    <div>
+      <%= f.submit class: "btn"%>
+    </div>
   </div>
+
 <% end %>

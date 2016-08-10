@@ -10,4 +10,12 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
+
+  def note_count
+    notes.where(created_at: (Time.now - 7.days)..Time.now).count
+  end
+
+  def photo_count
+    photos.where(created_at: (Time.now - 7.days)..Time.now).count
+  end
 end

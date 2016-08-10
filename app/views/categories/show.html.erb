@@ -1,5 +1,7 @@
+
+
 <div>
-  <%= link_to "Create Category", new_category_path(id: category.parent_category_id), class: "btn" %>
+  <%= link_to "Create Category", new_category_path(parent_category_id: params[:id]), class: "btn" %>
 </div>
 
 <h3> <%= category.name.capitalize %> </h3>
